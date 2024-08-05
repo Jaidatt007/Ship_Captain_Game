@@ -38,20 +38,30 @@ fun ButtonUnit(){
 
 @Composable
 fun ButtonDesign(text:String , onClick : ()->Unit){
-    var shape = RoundedCornerShape(0.dp)
-    if (text == "NORTH"){
-        shape = RoundedCornerShape(topStart = 24.dp,topEnd = 24.dp,bottomStart = 12.dp,bottomEnd = 12.dp)
-    } else if(text == "WEST"){
-        shape = RoundedCornerShape(topStart = 36.dp,topEnd = 12.dp,bottomStart = 36.dp,bottomEnd = 12.dp)
-    }else if(text == "EAST"){
-        shape = RoundedCornerShape(topStart = 12.dp,topEnd = 36.dp,bottomStart = 12.dp,bottomEnd = 36.dp)
-    }else if(text == "SOUTH"){
-        shape = RoundedCornerShape(topStart = 12.dp,topEnd = 12.dp,bottomStart = 24.dp,bottomEnd = 24.dp)
+    var ts = 0
+    var te = 0
+    var bs = 0
+    var be = 0
+
+    when(text){
+        "NORTH" -> {
+            ts = 24 ; te = 24 ; bs = 12 ; be = 12
+        }
+        "WEST" -> {
+            ts = 36 ; te = 12 ; bs = 36 ; be = 12
+        }
+        "EAST" -> {
+            ts = 12 ; te = 24 ; bs = 12 ; be = 24
+        }
+        "SOUTH" -> {
+            ts = 12 ; te = 12 ; bs = 24 ; be = 24
+        }
     }
+
     FloatingActionButton(modifier = Modifier.width(110.dp).height(56.dp).padding(4.dp),
         onClick = onClick,
         elevation = FloatingActionButtonDefaults.elevation(4.dp),
-        shape = shape,
+        shape = RoundedCornerShape(topStart = ts.dp,topEnd = te.dp,bottomStart = bs.dp,bottomEnd = be.dp),
     ) {
         Text(text = text, fontSize = 22.sp)
     }
