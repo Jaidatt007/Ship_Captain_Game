@@ -7,12 +7,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.shipcaptaingame.R
+import com.example.shipcaptaingame.units.ButtonUnit
 
 @Composable
 fun ShipCaptainGameScreen(modifier: Modifier) {
@@ -27,8 +29,9 @@ fun ShipCaptainGameScreen(modifier: Modifier) {
         Box(modifier = Modifier.fillMaxSize().background(Color.Magenta).weight(4f)) {
 
         }
-        Box(modifier = Modifier.fillMaxSize().background(Color.Cyan).weight(14f)) {
-
+        Box(modifier = Modifier.fillMaxSize().background(Color.Cyan).weight(14f),
+            contentAlignment = Alignment.Center) {
+            ButtonUnit()
         }
     }
 }
