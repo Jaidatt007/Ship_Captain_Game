@@ -28,7 +28,7 @@ fun ButtonUnit(){
         Spacer(modifier = Modifier.height(4.dp))
         Row {
             ButtonDesign("WEST") { }
-            Spacer(modifier = Modifier.width(40.dp))
+            Spacer(modifier = Modifier.width(80.dp))
             ButtonDesign("EAST") { }
         }
         Spacer(modifier = Modifier.height(4.dp))
@@ -38,10 +38,7 @@ fun ButtonUnit(){
 
 @Composable
 fun ButtonDesign(text:String , onClick : ()->Unit){
-    var ts = 0
-    var te = 0
-    var bs = 0
-    var be = 0
+    var ts = 0  ; var te = 0  ; var bs = 0  ; var be = 0
 
     when(text){
         "NORTH" -> {
