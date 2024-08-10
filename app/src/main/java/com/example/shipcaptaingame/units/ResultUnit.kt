@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,15 +21,15 @@ fun ResultUnit(){
     Row(modifier = Modifier.fillMaxWidth().padding(8.dp),
         horizontalArrangement = Arrangement.SpaceEvenly){
         Row(verticalAlignment = Alignment.CenterVertically){
-            Text("Score", fontSize = 18.sp)
-            Text("  =  ")
-            Text("15", fontSize = 24.sp , fontWeight = FontWeight.Bold)
+            Text("Score", fontSize = 18.sp , color = MaterialTheme.colorScheme.onSecondary)
+            Text("  =  " , color = MaterialTheme.colorScheme.onSecondary)
+            Text("15", fontSize = 24.sp , fontWeight = FontWeight.Bold , color = MaterialTheme.colorScheme.onSecondary)
         }
         Spacer(modifier = Modifier.width(40.dp))
         Row(verticalAlignment = Alignment.CenterVertically){
-            Text("Attempts", fontSize = 18.sp)
-            Text("  =  ")
-            Text("15", fontSize = 24.sp , fontWeight = FontWeight.Bold)
+            Text("Attempts", fontSize = 18.sp , color = MaterialTheme.colorScheme.onSecondary)
+            Text("  =  " , color = MaterialTheme.colorScheme.onSecondary)
+            Text("15", fontSize = 24.sp , fontWeight = FontWeight.Bold , color = MaterialTheme.colorScheme.onSecondary)
         }
     }
 }

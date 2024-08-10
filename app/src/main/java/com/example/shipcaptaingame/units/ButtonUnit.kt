@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -57,6 +58,8 @@ fun ButtonDesign(text:String , onClick : ()->Unit){
 
     FloatingActionButton(modifier = Modifier.width(110.dp).height(56.dp).padding(4.dp),
         onClick = onClick,
+        containerColor = MaterialTheme.colorScheme.primary,
+        contentColor = MaterialTheme.colorScheme.onPrimary,
         elevation = FloatingActionButtonDefaults.elevation(4.dp),
         shape = RoundedCornerShape(topStart = ts.dp,topEnd = te.dp,bottomStart = bs.dp,bottomEnd = be.dp),
     ) {
