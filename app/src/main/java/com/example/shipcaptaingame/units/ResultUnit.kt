@@ -15,21 +15,22 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.shipcaptaingame.viewmodel.ViewModel
 
 @Composable
-fun ResultUnit(){
+fun ResultUnit(viewModel: ViewModel){
     Row(modifier = Modifier.fillMaxWidth().padding(8.dp),
         horizontalArrangement = Arrangement.SpaceEvenly){
         Row(verticalAlignment = Alignment.CenterVertically){
             Text("Score", fontSize = 18.sp , color = MaterialTheme.colorScheme.onSecondary)
             Text("  =  " , color = MaterialTheme.colorScheme.onSecondary)
-            Text("15", fontSize = 24.sp , fontWeight = FontWeight.Bold , color = MaterialTheme.colorScheme.onSecondary)
+            Text(viewModel.score.value.toString(), fontSize = 24.sp , fontWeight = FontWeight.Bold , color = MaterialTheme.colorScheme.onSecondary)
         }
         Spacer(modifier = Modifier.width(40.dp))
         Row(verticalAlignment = Alignment.CenterVertically){
             Text("Attempts", fontSize = 18.sp , color = MaterialTheme.colorScheme.onSecondary)
             Text("  =  " , color = MaterialTheme.colorScheme.onSecondary)
-            Text("15", fontSize = 24.sp , fontWeight = FontWeight.Bold , color = MaterialTheme.colorScheme.onSecondary)
+            Text(viewModel.attempt.value.toString(), fontSize = 24.sp , fontWeight = FontWeight.Bold , color = MaterialTheme.colorScheme.onSecondary)
         }
     }
 }

@@ -9,13 +9,14 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.shipcaptaingame.R
+import com.example.shipcaptaingame.viewmodel.ViewModel
 
 @Composable
-fun GameGUIUnit(){
+fun GameGUIUnit(viewModel: ViewModel){
     Image(
         painter = painterResource(R.drawable.ship_png),
         contentDescription = "",
-        modifier = Modifier.offset(170.dp, 280.dp)
-            .size(80.dp).rotate(0f)
+        modifier = Modifier.offset((viewModel.x.value).dp, (viewModel.y.value).dp)
+            .size(80.dp).rotate((viewModel.turn.value).toFloat())
     )
 }

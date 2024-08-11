@@ -19,21 +19,30 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.shipcaptaingame.viewmodel.ViewModel
 
 @Composable
-fun ButtonUnit(){
+fun ButtonUnit(viewModel: ViewModel){
     Column(modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally) {
-        ButtonDesign("NORTH") { }
+        ButtonDesign("NORTH" , onClick = {
+            viewModel.buttonClicked("N")
+        })
         Spacer(modifier = Modifier.height(4.dp))
         Row {
-            ButtonDesign("WEST") { }
+            ButtonDesign("WEST" , onClick = {
+                viewModel.buttonClicked("W")
+            })
             Spacer(modifier = Modifier.width(80.dp))
-            ButtonDesign("EAST") { }
+            ButtonDesign("EAST" , onClick = {
+                viewModel.buttonClicked("E")
+            })
         }
         Spacer(modifier = Modifier.height(4.dp))
-        ButtonDesign("SOUTH") { }
+        ButtonDesign("SOUTH" , onClick = {
+            viewModel.buttonClicked("S")
+        })
     }
 }
 

@@ -21,23 +21,25 @@ import com.example.shipcaptaingame.R
 import com.example.shipcaptaingame.units.ButtonUnit
 import com.example.shipcaptaingame.units.GameGUIUnit
 import com.example.shipcaptaingame.units.ResultUnit
+import com.example.shipcaptaingame.viewmodel.ViewModel
 
 @Composable
-fun ShipCaptainGameScreen(modifier: Modifier) {
+fun ShipCaptainGameScreen(modifier: Modifier,
+                          viewModel: ViewModel) {
     Column(modifier = modifier) {
         Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
             .weight(34f)) {
-            GameGUIUnit()
+            GameGUIUnit(viewModel = viewModel)
         }
         Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.secondary)
             .weight(4f),
             contentAlignment = Alignment.Center) {
-            ResultUnit()
+            ResultUnit(viewModel = viewModel)
         }
         Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
             .weight(14f),
             contentAlignment = Alignment.Center) {
-            ButtonUnit()
+            ButtonUnit(viewModel = viewModel)
         }
     }
     Row(modifier = modifier.then(Modifier.fillMaxWidth().padding(16.dp)),
