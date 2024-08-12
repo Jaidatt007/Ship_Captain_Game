@@ -1,6 +1,5 @@
 package com.example.shipcaptaingame.viewmodel
 
-import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.lifecycle.ViewModel
@@ -26,8 +25,21 @@ class ViewModel : ViewModel()  {
 
     fun buttonClicked(dir:String){
         _repository.buttonClicked(dir = dir)
+
+        _score.value = _repository.get_score().value
+        _attempt.value = _repository.get_attempt().value
+
         _x.value = _repository.get_x().value
         _y.value = _repository.get_y().value
-        Log.d("viewmodel","x = ${x.value} and y = ${y.value}")
+        _turn.value = _repository.get_turn().value
+    }
+    fun resetGame(){
+        _repository.resetGame()
+        _score.value = _repository.get_score().value
+        _attempt.value = _repository.get_attempt().value
+
+        _x.value = _repository.get_x().value
+        _y.value = _repository.get_y().value
+        _turn.value = _repository.get_turn().value
     }
 }

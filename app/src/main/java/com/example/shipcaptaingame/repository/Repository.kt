@@ -20,19 +20,40 @@ class Repository {
     fun get_y() = _y
     fun get_turn() = _turn
 
+    private val step = 50
+
     fun buttonClicked(dir : String){
         if(dir == "N") {
-            _y.value -= 10
-            Log.d("Button Clicked", "North ${_y.value}")
+            _turn.value = 0
+            _y.value -= step
+            Log.d("Button Clicked", "North")
+            Log.d("Position" , "x = ${_x.value} & y = ${_y.value}")
         }else if(dir == "W"){
-            _x.value -= 10
+            _turn.value = 270
+            _x.value -= step
             Log.d("Button Clicked", "West")
+            Log.d("Position" , "x = ${_x.value} & y = ${_y.value}")
         }else if(dir == "E"){
-            _x.value += 10
+            _turn.value = 90
+            _x.value += step
             Log.d("Button Clicked", "East")
+            Log.d("Position" , "x = ${_x.value} & y = ${_y.value}")
         }else if(dir == "S"){
-            _y.value += 10
+            _turn.value = 180
+            _y.value += step
             Log.d("Button Clicked", "South")
+            Log.d("Position" , "x = ${_x.value} & y = ${_y.value}")
         }
+    }
+
+    fun resetGame(){
+        _score.value = 0
+        _attempt.value = 50
+
+        _x.value = 170
+        _y.value = 280
+        _turn.value = 0
+        Log.d("Button Clicked", "Reset")
+        Log.d("Position" , "x = ${_x.value} & y = ${_y.value}")
     }
 }

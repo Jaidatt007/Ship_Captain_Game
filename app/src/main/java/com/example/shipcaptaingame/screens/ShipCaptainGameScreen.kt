@@ -46,7 +46,7 @@ fun ShipCaptainGameScreen(modifier: Modifier,
         horizontalArrangement = Arrangement.End) {
         Icon(
             modifier = Modifier.size(40.dp).clickable {
-                //TODO Reload entire game
+                viewModel.resetGame()
             },
             painter = painterResource(R.drawable.round_refresh_24), contentDescription = "",
             tint = MaterialTheme.colorScheme.primary
