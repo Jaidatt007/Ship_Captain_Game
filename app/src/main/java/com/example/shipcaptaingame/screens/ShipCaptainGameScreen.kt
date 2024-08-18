@@ -28,7 +28,8 @@ fun ShipCaptainGameScreen(modifier: Modifier,
                           viewModel: ViewModel) {
     Column(modifier = modifier) {
         Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
-            .weight(34f)) {
+            .weight(34f),
+            contentAlignment = Alignment.Center) {
             GameGUIUnit(viewModel = viewModel)
         }
         Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.secondary)

@@ -6,12 +6,16 @@ import com.example.shipcaptaingame.model.Value
 
 class Repository {
     private var _score : Value = Value(0)
-    private var _attempt : Value = Value(50)
+    private var _attempt : Value = Value(20)
 
-    private var _x : Position = Position(170)
-    private var _y : Position = Position(280)
+    private var _x : Position = Position(0)
+    private var _y : Position = Position(0)
 
     private var _turn : Position = Position(0)
+
+    private var _width : Value = Value(0)
+    private var _height : Value = Value(0)
+
 
     fun get_score() = _score
     fun get_attempt() = _attempt
@@ -20,9 +24,16 @@ class Repository {
     fun get_y() = _y
     fun get_turn() = _turn
 
-    private val step = 50
+    fun get_width() = _width
+    fun get_height() = _height
+
+
+    private val step = 25
 
     fun buttonClicked(dir : String){
+
+        _attempt.value-=1
+
         if(dir == "N") {
             _turn.value = 0
             _y.value -= step
@@ -44,16 +55,35 @@ class Repository {
             Log.d("Button Clicked", "South")
             Log.d("Position" , "x = ${_x.value} & y = ${_y.value}")
         }
+
+        Log.d("width","width N = ${-( _width.value/2 )} width P = ${( _width.value/2 )}")
+        Log.d("height","height N = ${-( _height.value/2 )} height P = ${( _height.value/2 )}")
+
+        if(_x.value < -( _width.value/2 ) || _x.value > ( _width.value/2 ) || _y.value < -( _height.value/2 ) || _y.value > ( _height.value/2 )){
+            Log.d("Reseting","True")
+            resetGame()
+        }else{
+            Log.d("Reseting","False")
+        }
+
     }
 
     fun resetGame(){
-        _score.value = 0
-        _attempt.value = 50
 
-        _x.value = 170
-        _y.value = 280
+        _score.value = 0
+        _attempt.value = 20
+
+        _x.value = 0
+        _y.value = 0
         _turn.value = 0
+
         Log.d("Button Clicked", "Reset")
         Log.d("Position" , "x = ${_x.value} & y = ${_y.value}")
     }
+
+    fun setWidthHeight(width:Int , height:Int) {
+        _width.value = width
+        _height.value = height
+    }
+
 }
