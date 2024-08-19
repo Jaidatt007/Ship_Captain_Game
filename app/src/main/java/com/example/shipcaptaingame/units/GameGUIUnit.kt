@@ -2,7 +2,6 @@ package com.example.shipcaptaingame.units
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,7 +14,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
@@ -33,7 +31,7 @@ fun GameGUIUnit(viewModel: ViewModel){
 
     val density = LocalDensity.current
 
-    Box(modifier = Modifier.fillMaxSize().background(Color.Cyan),
+    Box(modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center) {
         Image(
             painter = painterResource(R.drawable.ship_png),

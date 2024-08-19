@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.example.shipcaptaingame.R
 import com.example.shipcaptaingame.units.ButtonUnit
 import com.example.shipcaptaingame.units.GameGUIUnit
+import com.example.shipcaptaingame.units.ResetDialogBox
 import com.example.shipcaptaingame.units.ResultUnit
 import com.example.shipcaptaingame.viewmodel.ViewModel
 
@@ -53,4 +54,5 @@ fun ShipCaptainGameScreen(modifier: Modifier,
             tint = MaterialTheme.colorScheme.primary
         )
     }
+    ResetDialogBox(viewModel = viewModel)
 }
