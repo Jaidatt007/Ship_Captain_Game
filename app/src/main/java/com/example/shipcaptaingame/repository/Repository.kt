@@ -106,4 +106,8 @@ class Repository {
         }
     }
 
+    fun onAttemptChange(attempt : Int){
+        _attempt.value = attempt
+    }
+
 }

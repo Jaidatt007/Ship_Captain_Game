@@ -47,6 +47,7 @@ class ViewModel : ViewModel()  {
 
         _alertDialogbox.value = _repository.get_alertDialogbox().bool
     }
+
     fun resetGame(){
         _repository.resetGame()
 
@@ -59,8 +60,13 @@ class ViewModel : ViewModel()  {
 
         _alertDialogbox.value = _repository.get_alertDialogbox().bool
     }
+
     fun setWidthHeight(width:Int , height:Int){
         _repository.setWidthHeight(width,height)
     }
 
+    fun onAttemptChange(attempt : Int){
+        _repository.onAttemptChange(attempt)
+        _attempt.value = _repository.get_attempt().value
+    }
 }
