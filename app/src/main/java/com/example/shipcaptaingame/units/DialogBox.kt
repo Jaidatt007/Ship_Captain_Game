@@ -50,7 +50,7 @@ fun ResetDialogBox(viewModel: ViewModel){
                     }
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            "Attempts  = ",
+                            "Attempts left  = ",
                             modifier = Modifier.padding(8.dp),
                             fontSize = 18.sp
                         )

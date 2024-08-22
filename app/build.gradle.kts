@@ -54,6 +54,11 @@ dependencies {
     //ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
+    //Dynnamic theme
+    implementation(libs.material3)
+    implementation("androidx.compose.material3:material3-window-size-class:1.2.1")
+    implementation(libs.androidx.material3.adaptive.navigation.suite)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

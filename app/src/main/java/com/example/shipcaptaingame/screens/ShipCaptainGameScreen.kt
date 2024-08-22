@@ -28,17 +28,17 @@ import com.example.shipcaptaingame.viewmodel.ViewModel
 fun ShipCaptainGameScreen(modifier: Modifier,
                           viewModel: ViewModel) {
     Column(modifier = modifier) {
-        Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
+        Box(modifier = Modifier.fillMaxSize()
             .weight(34f),
             contentAlignment = Alignment.Center) {
             GameGUIUnit(viewModel = viewModel)
         }
-        Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.secondary)
+        Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.outline)
             .weight(4f),
             contentAlignment = Alignment.Center) {
             ResultUnit(viewModel = viewModel)
         }
-        Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
+        Box(modifier = Modifier.fillMaxSize()
             .weight(14f),
             contentAlignment = Alignment.Center) {
             ButtonUnit(viewModel = viewModel)

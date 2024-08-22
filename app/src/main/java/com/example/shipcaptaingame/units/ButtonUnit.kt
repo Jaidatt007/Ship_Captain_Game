@@ -67,8 +67,6 @@ fun ButtonDesign(text:String , onClick : ()->Unit){
 
     FloatingActionButton(modifier = Modifier.width(110.dp).height(56.dp).padding(4.dp),
         onClick = onClick,
-        containerColor = MaterialTheme.colorScheme.primary,
-        contentColor = MaterialTheme.colorScheme.onPrimary,
         elevation = FloatingActionButtonDefaults.elevation(4.dp),
         shape = RoundedCornerShape(topStart = ts.dp,topEnd = te.dp,bottomStart = bs.dp,bottomEnd = be.dp),
     ) {
