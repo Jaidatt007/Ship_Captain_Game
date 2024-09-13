@@ -6,7 +6,7 @@ Welcome to **Captain Ship Game** This is an interactive and fun game where you c
 
 ## 📷 Preview
 <p align="center">
-  <img src="media/Preview01.png" alt="drawing" width="210" />
+  <img src="media/PreviewGif01.gif" alt="drawing" width="210" />
 </p>
 <p align="center">
   <img src="media/Preview01.png" alt="drawing" width="270" />
